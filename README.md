@@ -83,11 +83,22 @@ leo-station-keeping/
 
 ## How to run
 
-1. Open MATLAB and add `src/` to the path.
-2. Run the initialization script to set orbital and satellite parameters and convert the initial orbital elements to Cartesian state.
-3. Open and run the Simulink validation model.
-4. Run the simulation scripts to reproduce the open-loop and closed-loop responses.
-5. To regenerate the embedded code, build the control model with Embedded Coder.
+The project is driven by a single entry-point script. Running the file named prgBE_DSAS.m executes the
+full pipeline in one pass, so there is no need to open and run each file
+manually:
+
+1. Loads the orbital and satellite parameters (calls the initialization script).
+2. Builds the linear state-space model (A, B, C, D) from the Clohessy-Wiltshire
+   equations and computes the LQ gains (K1, K2, and the augmented Kp).
+3. Runs the Simulink validation model programmatically.
+4. Generates the result figures (orbit, state evolution, command, and the
+   perturbation and error plots).
+
+Select the controller with the toggle flags at the top of the script
+(`nocoorK0`, `corrK1`, `corrK2`, `corrKp`): set one to 1 and run.
+
+The script requires the initialization script and the Simulink models to be on
+the MATLAB path; it calls them automatically.
 
 ## What you can reproduce
 
