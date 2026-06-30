@@ -1,0 +1,61 @@
+# ---------------------------------------------------------------------------
+# MATLAB / Simulink
+# ---------------------------------------------------------------------------
+*.asv
+*.m~
+*.autosave
+*.slx.r*
+*.mdl.r*
+*.slxc
+
+# Simulink project / build cache
+slprj/
+sccprj/
+
+# ---------------------------------------------------------------------------
+# Code generation (Embedded Coder / Simulink Coder / MATLAB Coder)
+# Generated C/C++ lives inside these folders. They are reproducible from the
+# model, so they are ignored by default.
+# If you WANT to commit the generated code (e.g. to showcase the workflow),
+# delete the matching lines below, or force-add a folder with:
+#   git add -f MyModel_ert_rtw/
+# ---------------------------------------------------------------------------
+codegen/
+*_ert_rtw/
+*_grt_rtw/
+*_rtw/
+*_sfun_rtw/
+_sharedutils/
+
+# ---------------------------------------------------------------------------
+# Compiled build outputs (always safe to ignore)
+# ---------------------------------------------------------------------------
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.exe
+*.elf
+*.hex
+*.map
+*.lst
+*.mex*
+
+# ---------------------------------------------------------------------------
+# Result data
+# Large *.mat data is ignored by default. Force-add specific datasets with:
+#   git add -f results/your_data.mat
+# ---------------------------------------------------------------------------
+*.mat
+*.mat.bak
+
+# ---------------------------------------------------------------------------
+# OS / editor
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+octave-workspace
+.vscode/
+.idea/
